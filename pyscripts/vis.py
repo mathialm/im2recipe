@@ -51,7 +51,7 @@ instr_vecs = normalize(instr_vecs)
 # load dataset
 print('Loading dataset.')
 dataset = utils.Layer.merge([utils.Layer.L1, utils.Layer.L2, utils.Layer.INGRS],params.dataset)
-print "Done."
+print("Done.")
 idx2ind = {} #sample id to position in dataset
 for i in range(len(dataset)):
     idx2ind[dataset[i]['id']] = i

@@ -116,3 +116,4 @@ results/*
 *.prototxt
 *.bin
 *.nfs*
+.idea/

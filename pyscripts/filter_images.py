@@ -31,7 +31,7 @@ if create:
 
     minsize = 500 #images smaller than 500x500 are discarded
     removed_imsize = 0
-    print remove_ids[0:10]
+    print(remove_ids[0:10])
     dataset = utils.Layer.merge([utils.Layer.L1, utils.Layer.L2, utils.Layer.INGRS],dataset)
 
     kept_ids = []
@@ -51,13 +51,13 @@ if create:
             continue
         kept_ids.append(entry['id'])
 
-    print removed_imsize
-    print len(kept_ids)
+    print(removed_imsize)
+    print(len(kept_ids))
     kept.write("\n".join(kept_ids))
     kept.close()
 
 else:
-    print "Selecting images based on ingredients..."
+    print("Selecting images based on ingredients...")
     vocab = 'files/vocab.txt'
     kept_ids = []
     with open('files/kept_for_segmentation.txt','r') as f: # text & image duplicates (ids to remove)
@@ -96,7 +96,7 @@ else:
             f.write(name + '\t' + str(count) + '\n')
 
     max_num = counts[-1]
-    print "Max number per class:", max_num
+    print("Max number per class:", max_num)
     ingr_counts = {}
     for name in names:
         ingr_counts[name]=0
@@ -104,7 +104,7 @@ else:
     topkinds = []
     for name in names[0:10]:
         topkinds.append(ingr_vocab[name])
-    print topkinds
+    print(topkinds)
 
     ids = []
     imids = []
@@ -139,4 +139,4 @@ else:
     with open('files/seg/ims_seg.txt','w') as f:
         f.write("\n".join(imids))
 
-    print len(imids)
+    print(len(imids))

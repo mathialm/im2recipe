@@ -58,10 +58,10 @@ def parseLossLog(filename,params):
                     time = line.split('Time:')[-1].split(' ')[0]
                     totaltime+=float(time)
 
-        print "Running time:",totaltime,'seconds:'
+        print("Running time:",totaltime,'seconds:')
         h = totaltime/3600
         m = totaltime%3600/60
-        print int(h), 'hours and',int(m), 'minutes.'
+        print(int(h), 'hours and',int(m), 'minutes.')
         return train_losses,val_losses
 
 
